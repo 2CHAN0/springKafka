@@ -12,7 +12,7 @@ public class Controller {
     @Autowired
     private KafkaTemplate<String, User> userKafkaTemplate;
 
-    private static final String TOPIC = "Users";
+    private static final String TOPIC = "users";
 
 
     @PostMapping("/publish")
