@@ -1,0 +1,11 @@
+{
+     "type": "record",
+     "namespace": "com.springKafka.avromodel",
+     "name": "User",
+     "doc": "Avro Schema for our Customer",
+     "fields": [
+       { "name": "name", "type": "string", "doc": "First Name of Customer" },
+       { "name": "age", "type": "int", "doc": "Age at the time of registration" },
+       { "name": "email", "type": "string", "doc": "Field indicating if the user is enrolled in marketing emails" }
+     ]
+}

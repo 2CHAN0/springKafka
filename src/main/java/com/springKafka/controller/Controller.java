@@ -1,6 +1,7 @@
 package com.springKafka.controller;
 
-import com.springKafka.model.User;
+
+import com.springKafka.avromodel.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,7 @@ public class Controller {
     @Autowired
     private KafkaTemplate<String, User> userKafkaTemplate;
 
-    private static final String TOPIC = "users";
+    private static final String TOPIC = "UsersRegistry";
 
 
     @PostMapping("/publish")
@@ -20,7 +21,7 @@ public class Controller {
         //only value
         //userKafkaTemplate.send(TOPIC, user);
         //with key
-        userKafkaTemplate.send(TOPIC, user.getName(), user);
+        userKafkaTemplate.send(TOPIC, "oy", user);
         return "User is registered !!";
     }
 }
